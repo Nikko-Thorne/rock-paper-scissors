@@ -80,8 +80,9 @@ function game() {
       computerScore = 0;
     } else if(computerScore == 5){
       alert("You've lost the game");
-      
+
     }
+}
 }
 
 console.log(game(playRound));
