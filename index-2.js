@@ -47,14 +47,13 @@ function playRound(playerChoice, computerChoice){
     }
 };
 
-/* log function to play a round and compare the choices 
-winner(playerChoice, computerChoice); */
-console.log(playRound(playerChoice, computerChoice));
+
 
 /* function to play multiple rounds of the game */
 function winner(playerChoice, computerChoice) {
   for (let i = 0; i < 5; i++) {
-    let playerChoice = prompt()
+    let humanChoice = prompt("please pick 'rock, paper, or scissors'");
+    let result = humanChoice.toLowerCase();
     playRound(computerChoice, playerChoice)
   } 
   if(winner === "Its a draw") {
