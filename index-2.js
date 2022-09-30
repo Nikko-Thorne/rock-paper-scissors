@@ -1,6 +1,6 @@
-let playerScore = 0;
-let computerScore = 0;
-
+let playerScore;
+let computerScore;
+let outCome;
 
 /* function to get player input */
 let player = function() {
@@ -36,50 +36,53 @@ console.log(computerChoice);
 /* function to play a round of the game 
 let winner =*/
 function playRound(playerChoice, computerChoice){
-    let outcome = ""
+  playerScore = 0;
+  computerScore = 0;
     if(playerChoice === computerChoice) {
-      console.log("Its a draw");
+      return "Its a draw";
     } else if (playerChoice === "rock" && computerChoice === "scissors") {
-        console.log("You win");
+        playerScore++;
+        return ["You win", playerScore];
     } else if (playerChoice === "paper" && computerChoice === "rock") {
-      console.log("You win");
+      playerScore++;
+      return ["You win", playerScore];
     } else if (playerChoice === "scissors" && computerChoice === "paper") {
-      console.log("You win");
+      playerScore++;
+      return ["You win", playerScore];
     }
      else if( playerChoice === "rock" && computerChoice === "paper") {
-      console.log("You lose");
+      computerScore++;
+      return ["You lose", computerScore];
     } else if (playerChoice === "paper" && computerChoice === "scissors") {
-      console.log("You lose");
+      computerScore++;
+      return ["You lose", computerScore];
     } else if (playerChoice === "scissors" && computerChoice === "scissors") {
-      console.log("You lose");
+      computerScore++;
+      return ["You lose", computerScore];
     }
 };
 
-/* log function to play a round and compare the choices 
-winner(playerChoice, computerChoice);*/
+console.log(playerScore);
+console.log(computerScore);
+
+/* log function to play a round and compare the choices */
 console.log(playRound(playerChoice, computerChoice));
 
 /* function to play multiple rounds of the game */
-function (winner) {
+function game() {
+  playRound();
+  playerScore;
+  computerScore;
   for (let i = 0; i < 5; i++) {
+    if(playerScore == 5){
+      alert("You've won the game!");
+      playerScore = 0;
+      computerScore = 0;
+    } else if(computerScore == 5){
+      alert("You've lost the game");
 
-    
-    if(winner === "You win") {
-      playerScore = i++;
-   
-    } else {
-      if(winner === "You lose") {
-        computerScore = i++;
-       
-      }
     }
-    if(playerScore === 5){
-      alert("Your the winner!");
-    }
-    if(computerScore === 5) {
-      alert("You lose =[");
-    }
-  }
+}
 }
 
-game();
+console.log(game(playRound));
