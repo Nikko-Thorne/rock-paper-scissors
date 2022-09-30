@@ -1,17 +1,3 @@
-let playerScore;
-let computerScore;
-let outCome;
-
-/* function to get player input */
-let player = function() {
-  let humanChoice = prompt("please pick 'rock, paper, or scissors'");
-  let result = humanChoice.toLowerCase();
-  console.log(result);
-   return result;
-}
-/* variable to store player choice outside of function */
-let playerChoice = player();
-
 /* function to generate random computer choice */
 function getComputerChoice() {
     let y = "";
@@ -36,53 +22,52 @@ console.log(computerChoice);
 /* function to play a round of the game 
 let winner =*/
 function playRound(playerChoice, computerChoice){
-  playerScore = 0;
-  computerScore = 0;
+    let outcome = ""
     if(playerChoice === computerChoice) {
-      return "Its a draw";
+      console.log("Its a draw");
     } else if (playerChoice === "rock" && computerChoice === "scissors") {
-        playerScore++;
-        return ["You win", playerScore];
+      playerScore = i++;  
+      console.log("You win");
     } else if (playerChoice === "paper" && computerChoice === "rock") {
-      playerScore++;
-      return ["You win", playerScore];
+      playerScore = i++;
+      console.log("You win");
     } else if (playerChoice === "scissors" && computerChoice === "paper") {
-      playerScore++;
-      return ["You win", playerScore];
+      playerScore = i++;
+      console.log("You win");
     }
      else if( playerChoice === "rock" && computerChoice === "paper") {
-      computerScore++;
-      return ["You lose", computerScore];
+      computerScore = i++;
+      console.log("You lose");
     } else if (playerChoice === "paper" && computerChoice === "scissors") {
-      computerScore++;
-      return ["You lose", computerScore];
+      computerScore = i++;
+      console.log("You lose");
     } else if (playerChoice === "scissors" && computerChoice === "scissors") {
-      computerScore++;
-      return ["You lose", computerScore];
+      computerScore = i++;
+      console.log("You lose");
     }
 };
 
-console.log(playerScore);
-console.log(computerScore);
-
-/* log function to play a round and compare the choices */
+/* log function to play a round and compare the choices 
+winner(playerChoice, computerChoice); */
 console.log(playRound(playerChoice, computerChoice));
 
 /* function to play multiple rounds of the game */
-function game() {
-  playRound();
-  playerScore;
-  computerScore;
+function winner(playerChoice, computerChoice) {
   for (let i = 0; i < 5; i++) {
-    if(playerScore == 5){
-      alert("You've won the game!");
-      playerScore = 0;
-      computerScore = 0;
-    } else if(computerScore == 5){
-      alert("You've lost the game");
-
+    let playerChoice = prompt()
+    playRound(computerChoice, playerChoice)
+  } 
+  if(winner === "Its a draw") {
+    console.log("Its a draw");
+  }
+    else if(winner === "You win") {
+      console.log("You win");
+    } else {
+      if(winner === "You lose") {
+        console.log("You lose");
+      }
     }
-}
-}
+  }
 
-console.log(game(playRound));
+
+winner();
