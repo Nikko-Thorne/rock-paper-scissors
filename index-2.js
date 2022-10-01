@@ -1,72 +1,73 @@
-/* function to generate random computer choice */
-function getComputerChoice() {
-    let y = "";
-    let x = Math.floor((Math.random() * 3) + 1);
-  
-    if(x == 1) {
-    y = "rock";
-   }
-   else if( x == 2) {
-    y = "paper";
-   }
-   else {
-    y = "scissors";
-   }
-   return y;
+function computerPlay() {
+  let random = Math.random();
+  if (random <= 0.3333) {
+      return "paper";
+  } else if (random >= 0.6666) {
+      return "rock";
+  } else {
+      return "scissors";
+  }
 }
 
-/* variable to store computer choice */
-const computerChoice = getComputerChoice();
-console.log(computerChoice);
 
-/* function to play a round of the game 
-let winner =*/
-function playRound(playerChoice, computerChoice){
-    let outcome = ""
-    if(playerChoice === computerChoice) {
-      console.log("Its a draw");
-    } else if (playerChoice === "rock" && computerChoice === "scissors") {
-      playerScore = i++;  
-      console.log("You win");
-    } else if (playerChoice === "paper" && computerChoice === "rock") {
-      playerScore = i++;
-      console.log("You win");
-    } else if (playerChoice === "scissors" && computerChoice === "paper") {
-      playerScore = i++;
-      console.log("You win");
-    }
-     else if( playerChoice === "rock" && computerChoice === "paper") {
-      computerScore = i++;
-      console.log("You lose");
-    } else if (playerChoice === "paper" && computerChoice === "scissors") {
-      computerScore = i++;
-      console.log("You lose");
-    } else if (playerChoice === "scissors" && computerChoice === "scissors") {
-      computerScore = i++;
-      console.log("You lose");
-    }
-};
-
-
-
-/* function to play multiple rounds of the game */
-function winner(playerChoice, computerChoice) {
-  for (let i = 0; i < 5; i++) {
-    let humanChoice = prompt("please pick 'rock, paper, or scissors'");
-    let result = humanChoice.toLowerCase();
-    playRound(computerChoice, playerChoice)
-  } 
-  if(winner === "Its a draw") {
-    console.log("Its a draw");
-  }
-    else if(winner === "You win") {
-      console.log("You win");
-    } else {
-      if(winner === "You lose") {
-        console.log("You lose");
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection.toLowerCase() === "rock") {
+      if (computerSelection === "paper") {
+          computerScore++;
+          return lose;
+      } else if (computerSelection === "rock") {
+          return tie;
+      } else {
+          userScore++;
+          return win;
       }
-    }
   }
 
+  if (playerSelection.toLowerCase() === "scissors") {
+      if (computerSelection === "paper") {
+          userScore++;
+          return win;
+      } else if (computerSelection === "rock") {
+          computerScore++;
+          return lose;
+      } else {
+          return tie;
+      }
+  }
 
-winner();
+  if (playerSelection.toLowerCase() === "paper") {
+      if (computerSelection === "paper") {
+          return tie;
+      } else if (computerSelection === "rock") {
+          userScore++;
+          return win;
+      } else {
+          computerScore++;
+          return lose;
+      }
+  }
+}
+
+
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
+let win = "You win"
+let lose = "You lose"
+let tie = "It is a tie"
+
+var i = 0;
+const play = () => {
+  let playerSelection = prompt("Pick a move");
+  const computerSelection = computerPlay()
+  console.log(playRound(playerSelection, computerSelection))
+  console.log("your score = " + userScore);
+  console.log("Computer's score = " + computerScore);
+  i++;
+  if (i !== 5) {
+      play();
+  } else {
+      alert("Game Over=> User("+userScore+") vs Computer("+computerScore+")");
+  }
+}
+
+play();
