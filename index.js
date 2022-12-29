@@ -63,11 +63,12 @@ const play = () => {
   console.log("your score = " + userScore);
   console.log("Computer's score = " + computerScore);
   i++;
+  /* delete later
   if (i !== 5) {
       play();
   } else {
       alert("Game Over=> User("+userScore+") vs Computer("+computerScore+")");
-  }
+  }*/
 }
 
 play();
