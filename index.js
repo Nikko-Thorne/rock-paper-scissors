@@ -9,8 +9,11 @@ function computerPlay() {
   }
 }
 
+rock.addEventListener("click", playRound);
+paper.addEventListener("click", playRound);
+scissors.addEventListener("click", playRound);
 
-function playRound(playerSelection, computerSelection) {
+function playRound(click, computerSelection) {
   if (playerSelection.toLowerCase() === "rock") {
       if (computerSelection === "paper") {
           computerScore++;
