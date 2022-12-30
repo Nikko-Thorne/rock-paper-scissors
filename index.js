@@ -9,6 +9,9 @@ function computerPlay() {
   }
 }
 
+let playerSelection = click;
+console.log(playerSelection);
+
 rock.addEventListener("click", playRound);
 paper.addEventListener("click", playRound);
 scissors.addEventListener("click", playRound);
@@ -60,7 +63,10 @@ let tie = "It is a tie"
 
 var i = 0;
 const play = () => {
+  /*
+  old delete later
   let playerSelection = prompt("Pick a move");
+  */
   const computerSelection = computerPlay()
   console.log(playRound(playerSelection, computerSelection))
   console.log("your score = " + userScore);
