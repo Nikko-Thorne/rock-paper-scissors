@@ -11,7 +11,6 @@ function computerPlay() {
 
 let playerSelection = click;
 console.log(playerSelection);
-
 rock.addEventListener("click", playRound);
 paper.addEventListener("click", playRound);
 scissors.addEventListener("click", playRound);
