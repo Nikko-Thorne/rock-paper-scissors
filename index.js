@@ -1,19 +1,6 @@
-
-var buttons = document.getElementsByClassName('gameButton');
-
-for(var i = 0; i < buttons.length; i++) {
-    buttons[i].onclick = function() { playerChoice() }; 
+function playerSelection(value) {
+    alert(value);
 }
-
-function playerChoice () {
-    let playerSelection = document.getElementsByClassName("gameButton").value;
-    alert(playerSelection);
-}
-/*
-document.getElementsByClass("b1").addEventListener("click", playerSelection);
-
-}
-*/
 
 let computerSelection = function computerPlay() {
   let random = Math.random();

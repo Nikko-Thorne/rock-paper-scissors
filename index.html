@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <button class="gameButton" id="b1" value="rock">Rock</button>
-    <button class="gameButton" id="b2" value="paper">Paper</button>
-    <button class="gameButton" id="b3" value="scissors">Scissors</button>
+    <button onclick="playerSelection(this.value)" value="rock">Rock</button>
+    <button onclick="playerSelection(this.value)" value="paper">Paper</button>
+    <button onclick="playerSelection(this.value)" value="scissors">
+      Scissors
+    </button>
 
     <script src="index.js" async defer></script>
   </body>
