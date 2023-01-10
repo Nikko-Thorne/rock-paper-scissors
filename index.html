@@ -10,12 +10,30 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <button id="button-rock" value="rock">Rock</button>
-    <button id="button-paper" value="paper">Paper</button>
-    <button id="button-scissors" value="scissors">Scissors</button>
-    <div id="gameOutcome">The games outcome.</div>
-    <div id="display-playerScore">0</div>
-    <div id="display-computerScore">0</div>
+    <div class="score">
+      <div class="playerScore">
+        <h2>Player</h2>
+        <p class="pScore">0</p>
+      </div>
+      <div class="computerScore">
+        <h2>Computer</h2>
+        <p class="cScore">0</p>
+      </div>
+    </div>
+
+    <div class="move">Start the round by selecting a move</div>
+
+    <div class="roundsLeft">Rounds left: 10</div>
+
+    <div class="options">
+      <button class="rock">Rock</button>
+      <button class="paper">Paper</button>
+      <button class="scissors">Scissors</button>
+    </div>
+
+    <div class="result"></div>
+
+    <button class="reload"></button>
 
     <script src="index.js" async defer></script>
   </body>
